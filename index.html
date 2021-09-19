@@ -22,15 +22,16 @@
                 </div>
   
                 <div class="modal-body">
-                  <slot name="body">
-                  </slot>
+                  <slot name="body"></slot>
                 </div>
   
-                <div class="modal-footer">
-                  <slot name="footer">
-                    <button class="modal-default-button" @click="$emit('close')">
-                      Zavrieť
-                    </button>
+                <div class="modal-close">
+                  <slot name="close">
+                    <div class="modal-default-button" @click="$emit('close')">
+                        <img src="./icons/close.svg">
+                        <span>Zavrieť</span>
+                    </div>
+                    <hr>
                   </slot>
                 </div>
               </div>
@@ -44,7 +45,13 @@
         <modal v-if="showModal" @close="showModal = false">
             <template v-if="in_category == false">
                 <h3 slot="header">Pridať kategóriu</h3>
-                <template slot="body">kategoriuuu</template>
+                <template slot="body">
+                    <input placeholder="ZADAJTE NÁZOV KATEGÓRIE">
+                    <div class="button">
+                        <img src="./icons/add icon.svg">
+                        <span>Pridať</span>
+                    </div>
+                </template>
             </template>
             <template v-else>
                 <h3 slot="header">Pridať fotky</h3>

@@ -19,6 +19,7 @@ const app = new Vue({
         in_category: false,
         categories:[],
         images: [],
+        message: null
     },
 
     methods:{

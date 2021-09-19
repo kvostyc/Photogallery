@@ -2,6 +2,7 @@
 
 $white: #fff;
 $gray: gray;
+$green: #42c88d;
 
 $Roboto: 'Roboto', sans-serif;
 
@@ -131,7 +132,7 @@ span{
   }
   
   .modal-container {
-    width: 300px;
+    width: 500px;
     margin: 0px auto;
     padding: 20px 30px;
     background-color: #fff;
@@ -139,19 +140,70 @@ span{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
     transition: all 0.3s ease;
     font-family: Helvetica, Arial, sans-serif;
+    position: relative;
   }
   
   .modal-header h3 {
     margin-top: 0;
-    color: #42b983;
+    color: $gray;
+    padding-bottom: 10px;
   }
-  
-  .modal-body {
-    margin: 20px 0;
+
+  .modal-body{
+      position: relative;
   }
-  
+
+  .modal-body hr{ 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid $gray; 
+    margin-bottom: 20px;
+  }
+
+  .modal-body input{
+    width: 100%;
+    border: none;
+    font-family: $Roboto;
+  }
+
+  .modal-body input:focus{
+    outline: none;
+    border: none;
+  }
+
+  .modal-body .button{
+      position: absolute;
+      background-color: $green;
+      padding: 10px 12px;
+      border-radius: 3px;
+      right: 0;
+      bottom: 0;
+  }
+
+  .modal-body .button span{
+    text-transform: uppercase;
+    color: white;
+    padding-left: 5px;
+    font-family: $Roboto;
+    word-spacing: $spacing;
+    margin-bottom: 20px;
+  }
   .modal-default-button {
-    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30%;
+    right: 0;
+  }
+
+  .modal-default-button span{
+    color: white;
+    font-family: $Roboto;
+    text-align: center;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-weight: bold;
   }
   
   .modal-enter {
