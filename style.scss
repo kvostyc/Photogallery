@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$white: #fff;
+$gray: gray;
+
+$Roboto: 'Roboto', sans-serif;
+
+$spacing: 0.1em;
+
+body{
+    margin: 0;
+    background-color: $white;
+}
+
+.header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url('images/priroda.jpeg');
+    filter: brightness(50%);
+    width: 100%;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.content{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.content hr{
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid $white;
+    margin-bottom: 50px; 
+    padding: 0;
+}
+
+.content h2{
+    padding-bottom: 20px;
+}
+
+.content h2, h3{
+    font-family: $Roboto;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: $spacing;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.column{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    text-align: center;
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.column .thumbnail{
+    width: 100%;
+    height: 80%;
+}
+
+.thumbnail.in-category{
+    width: 100%;
+    height: 100%;
+}
+
+p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $Roboto;
+    color: $gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: $spacing;
+}
+
+span{
+    text-align: center;
+    font-family: $Roboto;
+    font-weight: bold;
+    color: $gray;
+}
+
+#add-category{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $white;
+}
+
+
+//Vue Modal component
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .modal-container {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  .modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+  }
+  
+  .modal-body {
+    margin: 20px 0;
+  }
+  
+  .modal-default-button {
+    float: right;
+  }
+  
+  .modal-enter {
+    opacity: 0;
+  }
+  
+  .modal-leave-active {
+    opacity: 0;
+  }
+  
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+
