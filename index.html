@@ -61,7 +61,11 @@
             </template>
             <template v-else>
                 <h3 slot="header">Pridať fotky</h3>
-                <template slot="body">fotkaaa</template>
+                <template slot="body">
+                    <div class="">
+                        
+                    </div>
+                </template>
             </template>
         </modal>
         <div class="container">
@@ -75,7 +79,7 @@
                 <div class="row">
                     <!-- Render Categories & Images in Category-->
                     <div v-if="in_category == false && category.image" v-for="category in categories" class="column"  @click="renderCategory(category)">
-                            <img class="thumbnail" v-bind:src="'http://api.programator.sk/images/500x500/' + category.image.fullpath" @mouseover="changeHeader">
+                            <img class="thumbnail" v-bind:src="'http://api.programator.sk/images/1280x720/' + category.image.fullpath" @mouseover="changeHeader">
                             <p>{{ category.name }}</p>
                     </div>
 

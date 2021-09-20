@@ -17,14 +17,14 @@ const app = new Vue({
     },
     data:{
         showModal: false,
-        background: 'images/priroda.jpeg',
-        category_name: 'Kategórie',
         in_category: false,
+        category_name: 'Kategórie',
         categories: [],
         images: [],
         
         formData: {
-            name: null
+            name: null,
+            path: null,
         },
         message: null
     },
@@ -64,7 +64,8 @@ const app = new Vue({
             .then(response => 
             {
                 this.formData = ''
-                this.setCategory(response)
+                this.renderCategory(response)
+                this.showModal = false
             })
             .catch(error =>
             {
