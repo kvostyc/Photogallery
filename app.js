@@ -5,11 +5,14 @@ Vue.component("modal", {
 
 const app = new Vue({
     el: '#app',
-    created () {
+    mounted () {
         axios.get('http://api.programator.sk/gallery')
         .then(response => 
         {
             this.categories = response.data.galleries
+        }).catch(error =>
+        {
+                console.log(error)
         })
     },
     data:{

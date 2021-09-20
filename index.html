@@ -75,12 +75,12 @@
                 <div class="row">
                     <!-- Render Categories & Images in Category-->
                     <div v-if="in_category == false && category.image" v-for="category in categories" class="column"  @click="renderCategory(category)">
-                            <img class="thumbnail" :src="'http://api.programator.sk/images/500x500/' + category.image.fullpath" @mouseover="changeHeader">
+                            <img class="thumbnail" v-bind:src="'http://api.programator.sk/images/500x500/' + category.image.fullpath" @mouseover="changeHeader">
                             <p>{{ category.name }}</p>
                     </div>
 
                     <div v-if="in_category == true" class="column" v-for="image in images">
-                        <img class="thumbnail in-category" :src="'http://api.programator.sk/images/200x200/' + image.fullpath">                
+                        <img class="thumbnail in-category" v-bind:src="'http://api.programator.sk/images/200x200/' + image.fullpath">                
                     </div>
 
                     <!-- Add Category & Image -->

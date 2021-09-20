@@ -15,7 +15,7 @@ body{
 
 .header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),url('images/priroda.jpeg');
+    rgba(0, 0, 0, 0.5)),url('http://api.programator.sk/images/1920x1080/DFauta/landscape-meadow-field-mountains-66874.jpg');
     filter: brightness(70%);
     width: 100%;
     height: 350px;
@@ -87,7 +87,7 @@ body{
 
 .column .thumbnail{
     width: 100%;
-    height: 80%;
+    height: 160px;
 }
 
 .thumbnail.in-category{
@@ -240,5 +240,8 @@ span{
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
+  
+
+  //Responzivita
   
 
