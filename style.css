@@ -170,7 +170,7 @@ span {
 }
 
 .modal-body {
-  position: relative;
+  margin-bottom: 50px;
 }
 
 .modal-body hr {
@@ -196,8 +196,8 @@ span {
   background-color: #42c88d;
   padding: 10px 12px;
   border-radius: 3px;
-  right: 0;
-  bottom: 0;
+  right: 30px;
+  bottom: 40px;
 }
 
 .modal-body .button span {
@@ -206,17 +206,7 @@ span {
   padding-left: 5px;
   font-family: "Roboto", sans-serif;
   word-spacing: 0.1em;
-  margin-bottom: 20px;
-}
-
-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+  margin-bottom: 30px;
 }
 
 .modal-default-button {
@@ -255,5 +245,47 @@ button {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    width: 300px;
+  }
+  .content {
+    width: 75%;
+  }
+  .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 960px) {
+  .modal-container {
+    width: 350px;
+  }
+  .content {
+    width: 75%;
+  }
+  .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1280px) {
+  .content {
+    width: 75%;
+  }
+  .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
 }
 /*# sourceMappingURL=style.css.map */
