@@ -19,6 +19,10 @@ const app = new Vue({
         in_category: false,
         categories:[],
         images: [],
+        
+        formData: {
+            name: null
+        },
         message: null
     },
 
@@ -32,7 +36,9 @@ const app = new Vue({
             .then(response => 
             {
                 this.images = response.data.images
-                //console.log(category.path)
+            }).catch(error =>
+            {
+                console.log(error)
             })
         },
         changeHeader(e){
@@ -43,6 +49,19 @@ const app = new Vue({
                 header.css("background-image", 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('+ bg +')')
                 header.fadeIn(200);
             });
+        },
+        createCategory(){
+            axios.post('http://api.programator.sk/gallery', this.formData )
+            .then(response => 
+            {
+                this.formData = ''
+                this.setCategory(response)
+                $emit('close')
+            })
+            .catch(error =>
+            {
+                console.log(error)
+            })
         }
     }
 })

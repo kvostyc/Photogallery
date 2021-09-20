@@ -47,11 +47,16 @@
             <template v-if="in_category == false">
                 <h3 slot="header">Pridať kategóriu</h3>
                 <template slot="body">
-                    <input placeholder="ZADAJTE NÁZOV KATEGÓRIE">
-                    <div class="button">
-                        <img src="./icons/add icon.svg">
-                        <span>Pridať</span>
-                    </div>
+                    <form @submit.prevent="createCategory()">
+                        <input placeholder="ZADAJTE NÁZOV KATEGÓRIE" v-model="formData.name">
+                        <label for="submit">
+                            <div class="button">
+                                <img src="./icons/add icon.svg">
+                                <span>Pridať</span>
+                            </div>
+                        </label>
+                        <input id="submit" type="submit" value="Submit" style="display: none;">
+                    </form>
                 </template>
             </template>
             <template v-else>
