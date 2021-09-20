@@ -55,7 +55,7 @@
                                 <span>Pridať</span>
                             </div>
                         </label>
-                        <input id="submit" type="submit" value="Submit" style="display: none;">
+                        <input id="submit" type="submit" value="Submit" style="display: none;" data-dismiss="modal">
                     </form>
                 </template>
             </template>
@@ -69,20 +69,21 @@
             <div class="content">
                 <h2>Fotogaléria</h2>
                 <div class="category-name">
-                    <i v-show="in_category == true" class="fas fa-arrow-left" @click="in_category = false, category_name = 'Kategórie'"></i><h3> {{ category_name }}</h3>
+                    <i v-show="in_category == true" class="fas fa-arrow-left" @click="in_category = false, categoryName = 'Kategórie'"></i><h3> {{ category_name }}</h3>
                 </div>
                 <hr>
                 <div class="row">
                     <!-- Render Categories & Images in Category-->
-                    <div v-if="in_category == false && category.image" v-for="category in categories" class="column"  @click="setCategory(category)">
+                    <div v-if="in_category == false && category.image" v-for="category in categories" class="column"  @click="renderCategory(category)">
                             <img class="thumbnail" :src="'http://api.programator.sk/images/500x500/' + category.image.fullpath" @mouseover="changeHeader">
                             <p>{{ category.name }}</p>
                     </div>
 
-                    <div class="column" v-for="image in images">
+                    <div v-if="in_category == true" class="column" v-for="image in images">
                         <img class="thumbnail in-category" :src="'http://api.programator.sk/images/200x200/' + image.fullpath">                
                     </div>
-                    <!-- Add Category & Image Carts-->
+
+                    <!-- Add Category & Image -->
                     <div class="column" id="add-category" v-if="in_category == false" @click="showModal = true">
                         <div>
                             <img class="icon" src="icons/add-category.svg"><br>

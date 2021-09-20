@@ -17,7 +17,7 @@ const app = new Vue({
         background: 'images/priroda.jpeg',
         category_name: 'Kategórie',
         in_category: false,
-        categories:[],
+        categories: [],
         images: [],
         
         formData: {
@@ -27,7 +27,9 @@ const app = new Vue({
     },
 
     methods:{
-        setCategory(category){
+
+        //Nastav kategóriu
+        renderCategory(category){
             this.category_name = category.name;
             this.in_category = true;
             images = [],
@@ -41,6 +43,8 @@ const app = new Vue({
                 console.log(error)
             })
         },
+        
+        //Dynamický header image
         changeHeader(e){
             var header = $('.header');
             var bg = $(e.target).attr("src")
@@ -50,13 +54,14 @@ const app = new Vue({
                 header.fadeIn(200);
             });
         },
+
+        //Vytvor novú kategóriu
         createCategory(){
             axios.post('http://api.programator.sk/gallery', this.formData )
             .then(response => 
             {
                 this.formData = ''
                 this.setCategory(response)
-                $emit('close')
             })
             .catch(error =>
             {
