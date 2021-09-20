@@ -29,7 +29,7 @@
                 <div class="modal-close">
                   <slot name="close">
                     <div class="modal-default-button" @click="$emit('close')">
-                        <img src="./icons/close.svg">
+                        <img src="../icons/close.svg">
                         <span>Zavrieť</span>
                     </div>
                   </slot>
@@ -51,7 +51,7 @@
                         <input placeholder="ZADAJTE NÁZOV KATEGÓRIE" v-model="formData.name">
                         <label for="submit">
                             <div class="button">
-                                <img src="./icons/add icon.svg">
+                                <img src="../icons/add icon.svg">
                                 <span>Pridať</span>
                             </div>
                         </label>
@@ -83,14 +83,14 @@
                     <!-- Add Category & Image -->
                     <div class="column" id="add-category" v-if="in_category == false" @click="showModal = true">
                         <div>
-                            <img class="icon" src="icons/add-category.svg"><br>
+                            <img class="icon" src="../icons/add-category.svg"><br>
                             <p>Pridať kategóriu</p>
                         </div>
                     </div>
 
                     <div v-else class="column" id="add-category">
                         <div>
-                            <img class="icon" src="icons/add-category.svg" alt=""><br>
+                            <img class="icon" src="../icons/add-category.svg" alt=""><br>
                             <p>Pridať fotky</p>
                         </div>
                     </div>
@@ -98,6 +98,6 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="../dist/main.js"></script>
 </body>
 </html>
