@@ -18,7 +18,7 @@ const app = new Vue({
     data:{
         showModal: false,
         in_category: false,
-        category_name: 'Kategórie',
+        categoryName: 'Kategórie',
         categories: [],
         images: [],
         
@@ -33,9 +33,9 @@ const app = new Vue({
 
         //Nastav kategóriu
         renderCategory(category){
-            this.category_name = category.name;
+            this.categoryName = category.name;
             this.in_category = true;
-            images = [],
+            this.images = [],
 
             axios.get('http://api.programator.sk/gallery/'+ category.path )
             .then(response => 
